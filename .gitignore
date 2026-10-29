@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Build output — `npm run build` regenerates this from src/, Scripts/ and assets/.
+dist/
+
+# The typing helper is compiled from Scripts/typer.swift by `npm run build`; it is not source.
+/assets/typer
+
+# Anything else the Swift compiler leaves behind
+*.o
+*.dSYM/
+.build/
+
+# TypeScript / Raycast-generated files
+*.tsbuildinfo
+raycast-env.d.ts
+
+# Local secrets and environment overrides
+.env
+.env.*
+!.env.example
+
+# Logs and caches
+*.log
+npm-debug.log*
+.eslintcache
+
+# macOS
+.DS_Store
+._*
+
+# Editors
+.vscode/
+.idea/

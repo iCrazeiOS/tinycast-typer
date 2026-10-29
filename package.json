@@ -1,0 +1,212 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "tinycast-typer",
+  "title": "Clipboard Typer",
+  "description": "Types whatever is on your clipboard into the frontmost app, one character at a time.",
+  "icon": "icon.png",
+  "author": "local",
+  "categories": [
+    "Productivity"
+  ],
+  "commands": [
+    {
+      "name": "type-clipboard",
+      "title": "Type Clipboard",
+      "description": "Types the clipboard into the frontmost app, letter by letter.",
+      "mode": "no-view",
+      "keywords": [
+        "type",
+        "keyboard",
+        "keystroke",
+        "paste",
+        "clipboard",
+        "text"
+      ],
+      "preferences": [
+        {
+          "name": "typingSpeed",
+          "title": "Typing Speed",
+          "description": "Delay between each character, in milliseconds.",
+          "type": "dropdown",
+          "required": false,
+          "default": "20",
+          "data": [
+            {
+              "title": "Instant (0 ms)",
+              "value": "0"
+            },
+            {
+              "title": "5 ms",
+              "value": "5"
+            },
+            {
+              "title": "10 ms",
+              "value": "10"
+            },
+            {
+              "title": "15 ms",
+              "value": "15"
+            },
+            {
+              "title": "20 ms (default)",
+              "value": "20"
+            },
+            {
+              "title": "25 ms",
+              "value": "25"
+            },
+            {
+              "title": "30 ms",
+              "value": "30"
+            },
+            {
+              "title": "40 ms",
+              "value": "40"
+            },
+            {
+              "title": "50 ms",
+              "value": "50"
+            },
+            {
+              "title": "65 ms",
+              "value": "65"
+            },
+            {
+              "title": "80 ms",
+              "value": "80"
+            },
+            {
+              "title": "100 ms",
+              "value": "100"
+            },
+            {
+              "title": "130 ms",
+              "value": "130"
+            },
+            {
+              "title": "160 ms",
+              "value": "160"
+            },
+            {
+              "title": "200 ms",
+              "value": "200"
+            },
+            {
+              "title": "250 ms",
+              "value": "250"
+            },
+            {
+              "title": "300 ms",
+              "value": "300"
+            }
+          ]
+        },
+        {
+          "name": "startDelay",
+          "title": "Start Delay",
+          "description": "Wait before the first keystroke, so the hotkey is released and the target app has focus.",
+          "type": "dropdown",
+          "required": false,
+          "default": "250",
+          "data": [
+            {
+              "title": "None (0 ms)",
+              "value": "0"
+            },
+            {
+              "title": "50 ms",
+              "value": "50"
+            },
+            {
+              "title": "100 ms",
+              "value": "100"
+            },
+            {
+              "title": "150 ms",
+              "value": "150"
+            },
+            {
+              "title": "200 ms",
+              "value": "200"
+            },
+            {
+              "title": "250 ms (default)",
+              "value": "250"
+            },
+            {
+              "title": "300 ms",
+              "value": "300"
+            },
+            {
+              "title": "400 ms",
+              "value": "400"
+            },
+            {
+              "title": "500 ms",
+              "value": "500"
+            },
+            {
+              "title": "650 ms",
+              "value": "650"
+            },
+            {
+              "title": "800 ms",
+              "value": "800"
+            },
+            {
+              "title": "1 second",
+              "value": "1000"
+            },
+            {
+              "title": "1.5 seconds",
+              "value": "1500"
+            },
+            {
+              "title": "2 seconds",
+              "value": "2000"
+            },
+            {
+              "title": "3 seconds",
+              "value": "3000"
+            }
+          ]
+        },
+        {
+          "name": "newlines",
+          "title": "Line Breaks",
+          "description": "What to type when the clipboard contains a line break. Typing them is faithful, but a line break sends a chat message or runs a command in Terminal.",
+          "type": "dropdown",
+          "required": false,
+          "default": "type",
+          "data": [
+            {
+              "title": "Type them (faithful)",
+              "value": "type"
+            },
+            {
+              "title": "Type a space instead",
+              "value": "space"
+            },
+            {
+              "title": "Skip them",
+              "value": "skip"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "preferences": [],
+  "dependencies": {
+    "@raycast/api": "^1.100.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.7.0"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "typecheck": "tsc --noEmit"
+  }
+}
